@@ -3,7 +3,7 @@
 
         <!--Page Title & Icons Start-->
         <div class="header-icons-container text-center">
-            <a href="sign-up-page-2.html">
+            <a href="#email-signup-step2">
                 <span class="float-left">
                     <img src="../icons/back.svg" alt="Back Icon">
                 </span>
@@ -14,17 +14,18 @@
 
         <div class="rest-container">
             <div class="text-center header-icon-logo-margin e">
-                <img src="../images/logo-main.svg" alt="Main Logo">
+                <img src="../images/logo-food.png" class="w-75">
 
                 <!--Verification Information Container Start-->
                 <div class="margin-top-25">
                     <div class="verify-text">
-                        <span class="font-20">Verify Code</span>
+                        <span class="font-20">Código de verificación</span>
                     </div>
                     <span class="font-weight-light font-roboto font-15">
-                        Please check your SMS. <br/>
-                        We just sent a verification code on your phone
-                        <br/>
+
+                        Por favor revise su SMS. <br />
+                        Acabamos de enviar un código de <br/> verificación en su teléfono
+                        <br />
                         + 1 (000) 555 - 0000
                     </span>
                 </div>
@@ -37,14 +38,17 @@
                 <form class="width-100">
                     <div class="form-group">
                         <div class="input-group border-bottom">
-                            <input class="form-control verify-sms" type="tel" name="verification-code" placeholder="----" maxlength="4">
+                            <input class="form-control verify-sms" type="tel" name="verification-code"
+                                placeholder="----" maxlength="4">
                         </div>
                     </div>
                     <div class="font-roboto">
-                        <span>Didn't get a code? </span> <a href="#" class="href-decoration-none primary-color">Try Again</a>
+                        <span>No recibiste un código? </span> <a href="#" class="href-decoration-none primary-color">
+                            reenviar</a>
                     </div>
                     <div class="form-submit-button">
-                        <a href="/index-user" class="btn btn-verify btn-primary text-uppercase verify-btn">Verify</a>
+                        <a href="/home" class="btn btn-verify btn-primary text-uppercase verify-btn">
+                            Verificar</a>
                     </div>
                 </form>
             </div>
@@ -54,12 +58,12 @@
     </div>
 
     <!--Terms And Conditions Agreement Container Start-->
-    <div class="col-xs-12 col-sm-12 text-center sms-rate-text font-roboto flex-end margin-bottom-30">
+    <div class="col-xs-12 col-sm-12 text-center sms-rate-text font-roboto flex-end">
         <div class="container-sms-rate-text width-100 font-11">
-            <span class="light-gray font-weight-light">By signing up you have agreed to our </span>
-            <br/>
+            <span class="light-gray font-weight-light">Al registrarse, has aceptado nuestros </span>
+            <br />
             <a href="#" class="dark-link">
-                <span class="font-weight-light">Terms of Use & Privacy Policy</span>
+                <span class="font-weight-light">Términos de uso y política de privacidad</span>
             </a>
         </div>
     </div>

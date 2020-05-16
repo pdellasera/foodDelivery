@@ -13,6 +13,7 @@ $(document).ready(function () {
         postLoad: function () {
             $(document).ready(function () {
                 $(".needHide").css("display", "none")
+                $(".chat-icon-wrapper").css("display","none")
                 view.load()
                 closeMenuInLoadPage()
             })
@@ -25,6 +26,7 @@ $(document).ready(function () {
         postLoad: function () {
             $(document).ready(function () {
                 $(".needHide").css("display", "none")
+                $(".chat-icon-wrapper").css("display","none")
                 view.load()
                 closeMenuInLoadPage()
             })
@@ -37,6 +39,7 @@ $(document).ready(function () {
         postLoad: function () {
             $(document).ready(function () {
                 $(".needHide").css("display", "none")
+                $(".chat-icon-wrapper").css("display","none")
                 view.load()
             })
         }
@@ -48,6 +51,7 @@ $(document).ready(function () {
         postLoad: function () {
             $(document).ready(function () {
                 $(".needHide").css("display", "none")
+                $(".chat-icon-wrapper").css("display","none")
                 view.load()
             })
         }
@@ -59,6 +63,7 @@ $(document).ready(function () {
         postLoad: function () {
             $(document).ready(function () {
                 $(".needHide").css("display", "none")
+                $(".chat-icon-wrapper").css("display","none")
                 view.load()
                 closeMenuInLoadPage()
             })
@@ -71,6 +76,7 @@ $(document).ready(function () {
         postLoad: function () {
             $(document).ready(function () {
                 $(".needHide").css("display", "none")
+                $(".chat-icon-wrapper").css("display","none")
                 view.load()
             })
         }
@@ -82,6 +88,7 @@ $(document).ready(function () {
         postLoad: function () {
             $(document).ready(function () {
                 $(".needHide").css("display", "none")
+                $(".chat-icon-wrapper").css("display","none")
                 view.load()
                 closeMenuInLoadPage()
             })
@@ -94,6 +101,7 @@ $(document).ready(function () {
         postLoad: function () {
             $(document).ready(function () {
                 $(".needHide").css("display", "none")
+                $(".chat-icon-wrapper").css("display","none")
                 view.load()
                 closeMenuInLoadPage()
             })
@@ -106,6 +114,7 @@ $(document).ready(function () {
         postLoad: function () {
             $(document).ready(function () {
                 $(".needHide").css("display", "none")
+                $(".chat-icon-wrapper").css("display","none")
                 view.load()
             })
         }
@@ -117,6 +126,7 @@ $(document).ready(function () {
         postLoad: function () {
             $(document).ready(function () {
                 $(".needHide").css("display", "none")
+                $(".chat-icon-wrapper").css("display","none")
                 view.load()
             })
         }
@@ -128,6 +138,7 @@ $(document).ready(function () {
         postLoad: function () {
             $(document).ready(function () {
                 $(".needHide").css("display", "none")
+                $(".chat-icon-wrapper").css("display","none")
                 view.load()
                 closeMenuInLoadPage()
             })
@@ -146,6 +157,7 @@ $(document).ready(function () {
             name: "user",
             page: "/secure/home.html",
             postLoad: function () {
+                $(".chat-icon-wrapper").css("display","block")
                 view.load();
             }
         }
