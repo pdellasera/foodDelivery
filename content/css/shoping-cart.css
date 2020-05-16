@@ -236,7 +236,7 @@ Side note: I know that this style of nesting in SASS doesn't result in the most 
   .chat-icon-wrapper {
     position: fixed;
     bottom: 5px;
-    right: 145px;
+    right: 135px;
     width: 15%;
     height: 54px;
     border-radius: 50%;
