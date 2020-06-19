@@ -1,6 +1,6 @@
 /* Only register a service worker if it's supported */
 if ('serviceWorker' in navigator) {
-         navigator.serviceWorker.register('../sw.js');
+         navigator.serviceWorker.register('./sw/sw.js');
 }
 // if (window.location.protocol === 'http:') {
 //     const requireHTTPS = document.getElementById('requireHTTPS');
