@@ -7,7 +7,19 @@
     // "orientation":"portrait",
     "display":"standalone",
     "start_url":"/",
-    "scope": "/"
+    "scope": "/",
+    "icons": [
+      {
+        "src": "./images/icon-191.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "./images/icon-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
   }
 
 
