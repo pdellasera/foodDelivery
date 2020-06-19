@@ -30,23 +30,23 @@ window.onload = (e) => {
     }
 
     // Declare init HTML elements
-    const list = document.querySelector('#list');
+    // const list = document.querySelector('#list');
     const prompt = document.querySelector('#prompt');
     const buttonAdd = document.querySelector('#buttonAdd');
     const buttonCancel = document.querySelector('#buttonCancel');
 
-    // Add all cats from array into list
-    const items = cats.map(cat => {
-        return `
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-        <div class="item">
-          <img class="photo" src="${cat.img}" />
-          <div class="h5">${cat.title}</div>
-        </div>
-      </div>
-    `;
-    })
-    list.innerHTML = '<div class="row">' + items.join('') + '</div>';
+    // // Add all cats from array into list
+    // const items = cats.map(cat => {
+    //     return `
+    //   <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+    //     <div class="item">
+    //       <img class="photo" src="${cat.img}" />
+    //       <div class="h5">${cat.title}</div>
+    //     </div>
+    //   </div>
+    // `;
+    // })
+    // list.innerHTML = '<div class="row">' + items.join('') + '</div>';
 
     let deferredPrompt;
     window.addEventListener('beforeinstallprompt', (e) => {
