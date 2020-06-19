@@ -6,7 +6,8 @@
     "theme_color":"#fff",
     // "orientation":"portrait",
     "display":"standalone",
-    "start_url":"/"
+    "start_url":"/",
+    "scope": "/"
   }
 
 
