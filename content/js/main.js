@@ -20,7 +20,7 @@ window.onload = (e) => {
 
     // Set serviceWorker
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw/sw.js');.then((registration) => {
+        navigator.serviceWorker.register('./sw/sw.js').then((registration) => {
             // Registration was successful 😜
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }, (err) => {
