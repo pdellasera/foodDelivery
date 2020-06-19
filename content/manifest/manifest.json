@@ -4,7 +4,7 @@
     "description":"Bienvenid@s a #ProgramadorFitness, serie de videos, donde te daré consejos para llevar una vida saludable y evitar el sedentarismo. Recuerda... mente sana en cuerpo sano :)",
     "background_color":"#fff",
     "theme_color":"#fff",
-    // "orientation":"portrait",
+    "orientation":"portrait",
     "display":"standalone",
     "start_url":"/",
     "scope": "/",
