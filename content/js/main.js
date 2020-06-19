@@ -1,56 +1,98 @@
-/* Only register a service worker if it's supported */
-if ('serviceWorker' in navigator) {
-         navigator.serviceWorker.register('./sw/sw.js');
-}
-// if (window.location.protocol === 'http:') {
-//     const requireHTTPS = document.getElementById('requireHTTPS');
-//     const link = requireHTTPS.querySelector('a');
-//     link.href = window.location.href.replace('http://', 'https://');
-//     requireHTTPS.classList.remove('hidden');
-//   }
 
-const divInstall = document.getElementById('installContainer');
-const butInstall = document.getElementById('butInstall');
 
-window.addEventListener('beforeinstallprompt', (event) => {
-    console.log('👍', 'beforeinstallprompt', event);
-    // Stash the event so it can be triggered later.
-    window.deferredPrompt = event;
-    // Remove the 'hidden' class from the install button container
-    divInstall.classList.toggle('hidden', false);
-  });
+const promptToggle = (element, toAdd, toRemove) => {
+    element.classList.add(toAdd);
+    element.classList.remove(toRemove);
+};
 
-  butInstall.addEventListener('click', () => {
-    console.log('👍', 'butInstall-clicked');
-    const promptEvent = window.deferredPrompt;
-    if (!promptEvent) {
-      // The deferred prompt isn't available.
-      return;
+// Declare general function to get or set status into storage
+const statusPrompt = {
+    get: () => {
+        return localStorage.getItem('statusPrompt') || null;
+    },
+    set: (status) => {
+        localStorage.setItem('statusPrompt', status);
+        return;
     }
-    // Show the install prompt.
-    promptEvent.prompt();
-    // Log the result
-    promptEvent.userChoice.then((result) => {
-      console.log('👍', 'userChoice', result);
-      // Reset the deferred prompt variable, since
-      // prompt() can only be called once.
-      window.deferredPrompt = null;
-      // Hide the install button.
-      divInstall.classList.toggle('hidden', true);
+}
+
+window.onload = (e) => {
+
+    // Set serviceWorker
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw/sw.js');.then((registration) => {
+            // Registration was successful 😜
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, (err) => {
+            // registration failed 😯
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    }
+
+    // Declare init HTML elements
+    const list = document.querySelector('#list');
+    const prompt = document.querySelector('#prompt');
+    const buttonAdd = document.querySelector('#buttonAdd');
+    const buttonCancel = document.querySelector('#buttonCancel');
+
+    // Add all cats from array into list
+    const items = cats.map(cat => {
+        return `
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="item">
+          <img class="photo" src="${cat.img}" />
+          <div class="h5">${cat.title}</div>
+        </div>
+      </div>
+    `;
+    })
+    list.innerHTML = '<div class="row">' + items.join('') + '</div>';
+
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent Chrome 67 and earlier from automatically showing the prompt
+        e.preventDefault();
+        // Stash the event so it can be triggered later.
+        deferredPrompt = e;
+        // Show prompt modal if user previously not set to dismissed or accepted
+        if (!statusPrompt.get()) {
+            // Change status prompt
+            promptToggle(prompt, 'show', 'hide');
+        }
     });
-  });
 
-  window.addEventListener('appinstalled', (event) => {
-    console.log('👍', 'appinstalled', event);
-  });
+    // Add event click function for Cancel button
+    buttonCancel.addEventListener('click', (e) => {
+        // Change status prompt
+        promptToggle(prompt, 'hide', 'show');
+        // Set status prompt to dismissed
+        statusPrompt.set('dismissed');
+    });
 
-document.onreadystatechange = function () {
-    var state = document.readyState;
-    if (state == 'complete') {
-        // document.getElementById('interactive');
-        document.getElementById('load').style.visibility = "hidden";
-    }
+    // Add event click function for Add button
+    buttonAdd.addEventListener('click', (e) => {
+        // Change status prompt
+        promptToggle(prompt, 'hide', 'show');
+        // Show the prompt
+        deferredPrompt.prompt();
+        // Wait for the user to respond to the prompt
+        deferredPrompt.userChoice
+            .then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    statusPrompt.set('accepted');
+                    console.log('User accepted the A2HS prompt');
+                } else {
+                    statusPrompt.set('dismissed');
+                    console.log('User dismissed the A2HS prompt');
+                }
+                deferredPrompt = null;
+            });
+    });
 }
+
+
+// FINALIZA SECCION DE INSTALADOR DEL PWA ///
+
 $(document).ready(function () {
     'use strict';
 

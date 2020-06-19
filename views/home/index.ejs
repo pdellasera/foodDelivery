@@ -4,36 +4,42 @@
 
 <body>
 
-  <!--Loading Container Start-->
-  <div id="load" class="loading-overlay display-flex flex-column justify-content-center align-items-center">
-      <div class="primary-color font-28 fas fa-spinner fa-spin"></div>
-  </div>
-  <!-- Install button, hidden by default -->
-  <div id="installContainer" class="hidden">
-    <button id="butInstall" type="button">
-      Install
-    </button>
-  </div>
-  <!--Loading Container End-->
-      <div class="row h-100 align-items-center fix-container">
-          <div class="col-xs-12 col-sm-12 margin-bottom-up">
-              <div class="text-center mb-5">
-                  <img src="../images/logo-food.png" class="w-75">
-              </div>
-  
-              <!--Sign Up Buttons Container Start-->
-              <div class="sign-up-btn-container">
-                  <!-- <a class="btn btn-center width-100 display-block btn-secondary text-uppercase btn-padding-1">Regístrate con Facebook</a> -->
-                  <a href="/sign-up-email" class="btn btn-center width-100 display-block btn-primary text-uppercase margin-top-10">Regístrate</a>
-              </div>
-              <!--Sign Up Buttons Container End-->
-  
-              <div class="have-an-account text-center">
-                  <a href="/sign-in" class="regular-link fix-link">Ya tengo una cuenta?</a>
-              </div>
-          </div>
-      </div>
- 
-  <%- include('../partials/scripts/scripts') %>
-  </body>
+    <!--Loading Container Start-->
+    <div id="load" class="loading-overlay display-flex flex-column justify-content-center align-items-center">
+        <div class="primary-color font-28 fas fa-spinner fa-spin"></div>
+    </div>
+    <!-- Install button, hidden by default -->
+    <!--Loading Container End-->
+    <div class="row h-100 align-items-center fix-container">
+        <div class="col-xs-12 col-sm-12 margin-bottom-up">
+            <div class="text-center mb-5">
+                <img src="../images/logo-food.png" class="w-75">
+            </div>
+
+            <!--Sign Up Buttons Container Start-->
+            <div class="sign-up-btn-container">
+                <!-- <a class="btn btn-center width-100 display-block btn-secondary text-uppercase btn-padding-1">Regístrate con Facebook</a> -->
+                <a href="/sign-up-email"
+                    class="btn btn-center width-100 display-block btn-primary text-uppercase margin-top-10">Regístrate</a>
+            </div>
+            <!--Sign Up Buttons Container End-->
+
+            <div class="have-an-account text-center">
+                <a href="/sign-in" class="regular-link fix-link">Ya tengo una cuenta?</a>
+            </div>
+        </div>
+    </div>
+    <div id="list" class="container-fluid"></div>
+    <div id="prompt" class="prompt hide bg-light border-top">
+        <div class="font-weight-bold">Add to Home screen</div>
+        <small>This app can be installed in your home screen</small>
+        <div class="text-right">
+            <button id="buttonCancel" type="button"
+                class="font-weight-bold text-muted btn-sm btn btn-link">CANCEL</button>
+            <button id="buttonAdd" type="button" class="font-weight-bold text-primary btn-sm btn btn-link">ADD</button>
+        </div>
+    </div>
+    <%- include('../partials/scripts/scripts') %>
+</body>
+
 </html>
