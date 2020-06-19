@@ -1,3 +1,13 @@
+/* Only register a service worker if it's supported */
+if ('serviceWorker' in navigator) {
+         navigator.serviceWorker.register('/service-worker.js');
+}
+// if (window.location.protocol === 'http:') {
+//     const requireHTTPS = document.getElementById('requireHTTPS');
+//     const link = requireHTTPS.querySelector('a');
+//     link.href = window.location.href.replace('http://', 'https://');
+//     requireHTTPS.classList.remove('hidden');
+//   }
 document.onreadystatechange = function () {
     var state = document.readyState;
     if (state == 'complete') {
@@ -7,7 +17,7 @@ document.onreadystatechange = function () {
 }
 $(document).ready(function () {
     'use strict';
-  
+
     //Uncomment if you wish to auto redirect without click on the logo on the page loading
     // if($('.loading-logo.customer').length>0){
     //     setTimeout(function(){
@@ -89,7 +99,7 @@ $(document).ready(function () {
         $('.ride-options-bottom').removeClass('hidden');
     });
 
-    $(document).on('click','.send-wishes-container', function () {
+    $(document).on('click', '.send-wishes-container', function () {
         console.log("d")
         var wishContainer = $('.ride-options-bottom').height();
         $('.ride-options-bottom').addClass('hidden');
@@ -638,10 +648,10 @@ CSS
 }
 /**************************************************************************************/
 
-function showCart(){
-    if($(".chat-icon-wrapper").hasClass("show-cart")){
+function showCart() {
+    if ($(".chat-icon-wrapper").hasClass("show-cart")) {
         $(".chat-icon-wrapper").removeClass("show-cart")
-    }else{
+    } else {
         $(".chat-icon-wrapper").addClass("show-cart")
     }
 }
@@ -649,4 +659,3 @@ function showCart(){
 
 
 
- 

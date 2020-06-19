@@ -157,8 +157,7 @@ $(document).ready(function () {
             name: "user",
             page: "/secure/home.html",
             postLoad: function () {
-                $(".chat-icon-wrapper").css("display","block")
-                view.load();
+               new handler().handlers(0,1)
             }
         }
     });
