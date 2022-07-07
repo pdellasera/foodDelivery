@@ -16,7 +16,7 @@
   "dependencies": {
     "express-locale": "^2.0.0",
     "http-server": "^0.12.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "mysql-connector-plugdo-js": "^1.0.0",
     "plugdo-mongo": "^1.0.3",
     "plugdo-node": "^1.0.3"
